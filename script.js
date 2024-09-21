@@ -9,11 +9,11 @@ function toggleMode() {
     //Seletor da imagem
     if (html.classList.contains("light")) {
         //modo claro
-        img.setAttribute("src", "./assets/profile-picture.jpg")
+        img.setAttribute("src", "./assets/profile-picture.png")
         img.setAttribute("alt", "texto alternativo 1")
         //modo escuro
     } else {
-        img.setAttribute("src", "./assets/profile-picture-dark.jpg")
+        img.setAttribute("src", "./assets/profile-picture-dark.png")
         img.setAttribute("alt", "texto alternativo 2")
     }
     

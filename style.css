@@ -31,6 +31,7 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
+  height: 100vh;
 }
 
 /* estilo da fonte */
@@ -72,6 +73,7 @@ body * {
 
   margin: 4px auto;
 }
+
 #switch button {
   width: 32px;
   height: 32px;
@@ -82,6 +84,8 @@ body * {
   position: absolute;
   top: 50%;
   left: 0;
+  animation: slide-out 0.2s;
+
   z-index: 1;
   transform: translateY(-50%);
 }
@@ -96,9 +100,13 @@ body * {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
+
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
+}
+
+#switch button:hover {
+outline: 8px solid var(--highlight-color);
 }
 
 /*definições da lista*/
@@ -160,4 +168,38 @@ footer {
   padding: 24px 0;
   text-align: center;
   font-size: 14px;
+}
+
+/* media queries */
+
+@media (min-width: 700px) {
+
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animações */
+
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
